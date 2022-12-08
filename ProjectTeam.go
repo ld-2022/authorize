@@ -1,8 +1,13 @@
 package authorize
 
 type ProjectTeam struct {
-	TeamId      int       `json:"teamId"`
-	TeamName    string    `json:"teamName"`
+	// 项目组id
+	TeamId int `json:"teamId"`
+	// 项目组名称
+	TeamName string `json:"teamName"`
+	// 项目组类型 0:通用 1:定制
+	TeamType int `json:"teamType"`
+	// 项目列表
 	ProjectList []Project `json:"projectList"`
 }
 
