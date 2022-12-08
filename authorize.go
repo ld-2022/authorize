@@ -6,4 +6,7 @@ type Authorize interface {
 
 	// FindUserProjectTeamList 查询用户项目团队列表
 	FindUserProjectTeamList(parameter RequestParameter) ([]ProjectTeam, error)
+
+	// FindProjectTeamList 查询项目团队列表
+	FindProjectTeamList(parameter RequestParameter) ([]ProjectTeam, error)
 }
