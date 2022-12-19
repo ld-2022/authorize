@@ -59,8 +59,26 @@ func (c *CommunityAuthorize) FindUserProjectTeamList(parameter authorize.Request
 	return []authorize.ProjectTeam{}, nil
 }
 
+func (c *CommunityAuthorize) FindProjectTeamList(parameter authorize.RequestParameter) ([]authorize.ProjectTeam, error) {
+	return []authorize.ProjectTeam{{
+		TeamId:      0,
+		TeamName:    "通用项目组",
+		TeamType:    0,
+		ProjectList: nil,
+	}, {
+		TeamId:      1,
+		TeamName:    "项目组A",
+		TeamType:    1,
+		ProjectList: nil,
+	}}, nil
+}
+
 func BuildPlugin() authorize.Authorize {
 	return new(CommunityAuthorize)
+}
+
+func BuildPluginType() authorize.PluginType {
+	return authorize.Plugin_AUTH
 }
 
 type AuthMsg struct {

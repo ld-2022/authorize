@@ -1,3 +1,3 @@
 #!/bin/zsh
-rm -rf community.so
+rm -rf enterprise.so
 go build -buildmode=plugin -gcflags="all=-N -l"
