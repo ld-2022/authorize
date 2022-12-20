@@ -67,7 +67,7 @@ func (e *EnterpriseAuthorize) CheckLogin(parameter authorize.RequestParameter) (
 
 // FindUserProjectTeamList 查询用户项目团队列表
 func (e *EnterpriseAuthorize) FindUserProjectTeamList(parameter authorize.RequestParameter) ([]authorize.ProjectTeam, error) {
-	token := parameter.Request.Header.Get("token")
+	token := encoding.GetHeaderVal(parameter.Request.Header, "enterpriseToken")
 	v := url.Values{}
 	v.Add("token", token)
 	postForm, err := http.PostForm(AuthorizeUrl+"/user/findUserProjectTeamList", v)
